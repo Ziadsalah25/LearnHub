@@ -18,12 +18,14 @@ connection();
 app.use(express.json())
 app.use(cors());
 
-const router = require("./routes/user");
+const userRouter = require("./routes/user");
+const authRouter = require("./routes/auth");
 
 
 
 
-app.use("/api/user", router);
+app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
 
 
 const port = process.env.PORT || 5001;
